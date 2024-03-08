@@ -1,0 +1,31 @@
+#include <stdio.h>
+int curr[5][5], maxclaim[5][5], avl[5]; 
+int alloc[5] = {0, 0, 0, 0, 0};
+int maxres[5], running[5], safe=0; 
+int count = 0, i, j, exec, r, p, k = 1;
+int main()
+{
+printf("nEnter the number of processes: "); 
+scanf("%d", &p);
+for (i = 0; i < p; i++) { 
+running[i] = 1; 
+count++;
+}
+printf("nEnter the number of resources: "); 
+scanf("%d", &r);
+for (i = 0; i < r; i++) {
+printf("nEnter the resource for instance %d: ", k++); 
+scanf("%d", &maxres[i]);
+}
+printf("nEnter maximum resource table:n"); 
+for (i = 0; i < p; i++) {
+for(j = 0; j < r; j++) { 
+scanf("%d", &maxclaim[i][j]);
+}
+}
+printf("nEnter allocated resource table:n"); 
+for (i = 0; i < p; i++) {
+for(j = 0; j < r; j++) { 
+scanf("%d", &curr[i][j]);
+}
+}
